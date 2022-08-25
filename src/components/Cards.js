@@ -1,64 +1,50 @@
-import React, { useState, useEffect } from "react";
-import "../App.css"
-import 'bootstrap/dist/css/bootstrap.min.css';
-import $ from 'jquery';
-import Popper from 'popper.js';
-import 'bootstrap/dist/js/bootstrap.bundle.min';
-import danger from "../assets/danger.png"
+import React from 'react';
+import Marquee from "react-fast-marquee";
 
+import './Cards.css'
+import '../App.css'
+
+import eventdata  from '../data/eventData.json'
+import icon from "../assets/map_danger_icon.png";
 const Cards = () => {
-
+    const skillBoxStyle = {
+        backgroundColor: '#F2AA4CFF' ,
+        boxShadow: `0px 0px 30px '#F2AA4CFF'`
+    }
     return (
-        <div className="container d-flex">
-            <div className="card" style={{width: '18rem'}}>
-                <img className="card-img-top" src={danger} alt="Card image cap"></img>
-                <div className="card-body">
-                    <h5 className="card-title">Card title</h5>
-                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" className="btn btn-primary">Go somewhere</a>
-                </div>
+        <div className="skills mt-5">
+            <div className={"w-100  justify-content-center d-flex flex-column"}>
+                <img src={icon} alt=" Icon" width="80" className={"m-4 align-self-center" } />
+                <h1 className={"text-setting"}> Events Hub</h1>
+                <p className={"my-2 text-setting2  align-self_center "}>
+                    Below are some of the ongoing events for the betterment of the society. Feel free to join these and make some positive change.
+                </p>
             </div>
-            <div className="card" style={{width: '18rem'}}>
-                <img className="card-img-top" src={danger} alt="Card image cap"></img>
-                <div className="card-body">
-                    <h5 className="card-title">Card title</h5>
-                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" className="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-            <div className="card" style={{width: '18rem'}}>
-                <img className="card-img-top" src={danger} alt="Card image cap"></img>
-                <div className="card-body">
-                    <h5 className="card-title">Card title</h5>
-                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" className="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-            <div className="card" style={{width: '18rem'}}>
-                <img className="card-img-top" src={danger} alt="Card image cap"></img>
-                <div className="card-body">
-                    <h5 className="card-title">Card title</h5>
-                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" className="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-            <div className="card" style={{width: '18rem'}}>
-                <img className="card-img-top" src={danger} alt="Card image cap"></img>
-                <div className="card-body">
-                    <h5 className="card-title">Card title</h5>
-                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" className="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-            <div className="card" style={{width: '18rem'}}>
-                <img className="card-img-top" src={danger} alt="Card image cap"></img>
-                <div className="card-body">
-                    <h5 className="card-title">Card title</h5>
-                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" className="btn btn-primary">Go somewhere</a>
+            <div className="skillsContainer">
+                <div className="skill--scroll">
+                    <Marquee
+                        gradient={false}
+                        speed={80}
+                        pauseOnHover={true}
+                        pauseOnClick={true}
+                        delay={0}
+                        play={true}
+                        direction="left"
+                    >
+                        {
+                            eventdata.events.map((event, id) => (
+                            <div className="skill--box" key={id} style={skillBoxStyle}>
+                                <img src={event.img} alt={event.title} />
+                                <h3 style={{color: '#212121'}}>
+                                    {event.title}
+                                </h3>
+                            </div>
+                        ))}
+                    </Marquee>
                 </div>
             </div>
         </div>
+
     );
 }
 

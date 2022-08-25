@@ -1,0 +1,49 @@
+{
+  "events": [
+    {
+      "id": 1,
+      "title": "Clean Delhi",
+      "description": "We will clean delhi roads from Cp to Mayur Vihar. We welcome you all to come and become a part of this.",
+      "author": "Rahul Singh",
+      "image": "https://st2.depositphotos.com/2751237/8014/v/950/depositphotos_80146064-stock-illustration-clean-india-mission.jpg",
+      "date": "22/5/2023",
+      "no_participant": 4
+    },
+    {
+      "id": 2,
+      "title": "Clean Mumbai",
+      "description": "We will clean delhi roads from Cp to Mayur Vihar. We welcome you all to come and become a part of this.",
+      "author": "Rahul Singh",
+      "image": "https://st2.depositphotos.com/2751237/8014/v/950/depositphotos_80146064-stock-illustration-clean-india-mission.jpg",
+      "date": "22/5/2023",
+      "no_participant": 4
+    },
+    {
+      "id": 3,
+      "title": "Clean Bihar",
+      "description": "We will clean delhi roads from Cp to Mayur Vihar. We welcome you all to come and become a part of this.",
+      "author": "Rahul Singh",
+      "image": "https://st2.depositphotos.com/2751237/8014/v/950/depositphotos_80146064-stock-illustration-clean-india-mission.jpg",
+      "date": "22/5/2023",
+      "no_participant": 4
+    },
+    {
+      "id": 5,
+      "title": "Clean UP",
+      "description": "We will clean delhi roads from Cp to Mayur Vihar. We welcome you all to come and become a part of this.",
+      "author": "Rahul Singh",
+      "image": "https://st2.depositphotos.com/2751237/8014/v/950/depositphotos_80146064-stock-illustration-clean-india-mission.jpg",
+      "date": "22/5/2023",
+      "no_participant": 4
+    },
+    {
+      "id": 6,
+      "title": "Clean Goa",
+      "description": "We will clean delhi roads from Cp to Mayur Vihar. We welcome you all to come and become a part of this.",
+      "author": "Rahul Singh",
+      "image": "https://st2.depositphotos.com/2751237/8014/v/950/depositphotos_80146064-stock-illustration-clean-india-mission.jpg",
+      "date": "22/5/2023",
+      "no_participant": 4
+    }
+  ]
+}

@@ -11,15 +11,20 @@
   display: inline-block;
   margin-top: 30px;
 }
-.outer_container{
+.outer_container_big{
   width: 100%;
   text-align: center;
   background: #101820FF;
+ height: auto;
 }
 .text-setting{
   color: #F2AA4CFF;
   font-family: Impact;
 }
+
+
+
+
 .text-setting2{
   color: #F2AA4CFF;
   font-weight: bold;
@@ -62,6 +67,8 @@ color: blanchedalmond;
 
 }
 
+
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -82,6 +89,26 @@ color: blanchedalmond;
 .App-link {
   color: #61dafb;
 }
+
+
+      .outer_card_box {
+        width: 100%;
+        align-self: center;
+        display: flex; /* displays flex-items (children) inline */
+        overflow-x: auto;
+      }
+
+      .inner_card {
+        flex: 0 0 20%; /* doesn't grow nor shrink, initial width set to 25% of the parent's */
+      }
+
+
+
+
+
+
+
+
 
 @keyframes App-logo-spin {
   from {

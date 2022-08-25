@@ -5,7 +5,7 @@ import CardApp from './components/Cards'
 import Label from "./components/Logo"
 function App() {
   return (
-      <div className={"outer_container"}>
+      <div className={"outer_container_big"}>
           <Label/>
           <Aquimap/>
           <CardApp/>
