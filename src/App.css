@@ -14,8 +14,19 @@
 .outer_container{
   width: 100%;
   text-align: center;
-  background: #282c34;
+  background: #101820FF;
 }
+.text-setting{
+  color: #F2AA4CFF;
+  font-family: Impact;
+}
+.text-setting2{
+  color: #F2AA4CFF;
+  font-weight: bold;
+  width: 600px;
+  align-self: center;
+}
+
 .myButton{
   background: none;
   border: none;
@@ -45,8 +56,9 @@
 
 .item_name{
 color: blanchedalmond;
-  font-size: 15px;
+  font-size: 14px;
   margin: 0 auto;
+  font-weight: bold;
 
 }
 
