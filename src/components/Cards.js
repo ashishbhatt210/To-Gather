@@ -9,7 +9,7 @@ import icon from "../assets/map_danger_icon.png";
 const Cards = () => {
     const skillBoxStyle = {
         backgroundColor: '#F2AA4CFF' ,
-        boxShadow: `0px 0px 30px '#F2AA4CFF'`
+        boxShadow: `0px 0px 30px #F2AA4CFF`
     }
     return (
         <div className="skills mt-5">
