@@ -14,6 +14,7 @@
 .outer_container{
   width: 100%;
   text-align: center;
+  background: #282c34;
 }
 .myButton{
   background: none;
@@ -24,8 +25,8 @@
   width: 30px;
   height: 30px;
 }
-.container {
-  width: 1000px;
+.container-popup {
+  width: 500px;
   height: 200px;
   display: grid;
   grid-template-columns: 110px 110px;
@@ -33,10 +34,20 @@
 }
 .item-1{
   background: red;
-
+  align-items: center;
+  display: flex;
 }
 .item-2{
   background: coral;
+  align-items: center;
+  display: flex;
+}
+
+.item_name{
+color: blanchedalmond;
+  font-size: 15px;
+  margin: 0 auto;
+
 }
 
 @media (prefers-reduced-motion: no-preference) {

@@ -80,30 +80,30 @@ const Aquimap = () => {
 
                             }}
                         >
-                            <div className="container">
+                            <div className="container-popup">
                                 <div className="item-1">
                                     <h3 className={"item_name"}>Co = {countryData.co}</h3>
                                 </div>
                                 <div className="item-2">
-                                    <h3>Co = {countryData.co}</h3>
+                                    <h3 className={"item_name"}>No = {countryData.no}</h3>
                                 </div>
                                 <div className="item-2">
-                                    <h3>Co = {countryData.co}</h3>
+                                    <h3 className={"item_name"}>NO2 = {countryData.no2}</h3>
                                 </div>
                                 <div className="item-1">
-                                    <h3>Co = {countryData.co}</h3>
+                                    <h3 className={"item_name"}>O3 = {countryData.o3}</h3>
                                 </div>
                                 <div className="item-1">
-                                    <h3>Co = {countryData.co}</h3>
+                                    <h3 className={"item_name"}>SO2 = {countryData.so2}</h3>
                                 </div>
                                 <div className="item-2">
-                                    <h3>Co = {countryData.co}</h3>
+                                    <h3 className={"item_name"}>PM2_5 = {countryData.pm2_5}</h3>
                                 </div>
                                 <div className="item-2">
-                                    <h3>Co = {countryData.co}</h3>
+                                    <h3 className={"item_name"}>PM_10 = {countryData.pm_10}</h3>
                                 </div>
                                 <div className="item-1">
-                                    <h3>Co = {countryData.co}</h3>
+                                    <h3 className={"item_name"}>NH3 = {countryData.nh3}</h3>
                                 </div>
                             </div>
                         </Popup>
