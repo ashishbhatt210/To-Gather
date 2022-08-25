@@ -26,9 +26,17 @@
 }
 .container {
   width: 1000px;
+  height: 200px;
   display: grid;
-  grid-template-columns: 30px 30px;
-  grid-auto-rows: auto;
+  grid-template-columns: 110px 110px;
+  grid-template-rows: 50px 50px 50px 50px;
+}
+.item-1{
+  background: red;
+
+}
+.item-2{
+  background: coral;
 }
 
 @media (prefers-reduced-motion: no-preference) {
