@@ -1,0 +1,47 @@
+{
+  "country": [
+    {
+      "latitude":28.20,
+      "longitude":76.84
+    },
+    {
+      "latitude":28.65,
+      "longitude":77.22
+    },
+    {
+      "latitude":28.72,
+      "longitude":77.45
+    },
+    {
+      "latitude": 37.11,
+      "longitude": 79.91
+    },
+    {
+      "latitude": 25.75,
+      "longitude": 82.69
+    },
+    {
+      "latitude": 31.42,
+      "longitude": 73.09
+    },
+    {
+      "latitude": 28.75 ,
+      "longitude": 77.33
+    },
+    {
+      "latitude": 29.39,
+      "longitude": 71.66
+    },{
+      "latitude": 34.01,
+      "longitude": 71.58
+    },
+    {
+      "latitude": 23.43,
+      "longitude": 69.21
+    },
+    {
+      "latitude": 29.16,
+      "longitude": 75.73
+    }
+  ]
+}
