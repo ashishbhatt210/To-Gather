@@ -311,3 +311,32 @@
 .singleProject:hover .project--showcaseBtn a:nth-child(2) {
     transform: translateX(-140px) scale(1.1) !important;
 }
+
+.user {
+    display: flex;
+    align-self: end;
+}
+.user img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+.user-info h5 {
+    margin: 0;
+}
+.user-info small {
+    color: #545d7a;
+}
+.tag {
+    background: #cccccc;
+    border-radius: 50px;
+    font-size: 12px;
+    color: #fff;
+    padding: 2px 10px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.tag-teal {
+    background-color: #47bcd4;
+}
+
