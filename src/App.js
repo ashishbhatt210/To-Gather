@@ -1,15 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
-import Aquimap from './components/Aqimap';
-import CardApp from './components/Cards'
-import Label from "./components/Logo"
+import Home from "./components/Home"
+import ChatRoom from "./components/ChatRoom"
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 function App() {
   return (
-      <div className={"outer_container_big"}>
-          <Label/>
-          <Aquimap/>
-          <CardApp/>
-      </div>
+      <BrowserRouter>
+          <Routes>
+              <Route path="/" element={ <Home/> }/>
+              <Route path="/chatrroom" element={ <ChatRoom/> }/>
+          </Routes>
+      </BrowserRouter>
   );
 }
 

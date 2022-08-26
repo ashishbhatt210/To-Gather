@@ -1,12 +1,17 @@
 import React, { useState, useEffect } from "react";
 import Marquee from "react-fast-marquee";
+import {Routes, Route, useNavigate} from 'react-router-dom';
 import './Cards.css'
 import '../App.css'
 import '../cards.scss'
 import icon from "../assets/event_icon.png";
 const Cards = () => {
     const [events, setEvents] = useState([]);
-
+    const navigate = useNavigate();
+    const navigateToChatRoom = () => {
+        // 👇️ navigate to /contacts
+        navigate('/chatrroom');
+    };
     useEffect(() => {
 
          fetch('https://climex-5bd2f-default-rtdb.firebaseio.com/events.json')
@@ -49,7 +54,7 @@ const Cards = () => {
                                 <span className="tag tag-teal">Marathon</span>
                                 <p className="card__snippet">{event.description}</p>
                                 <div className="card__lowerBanner">
-                            <button className={"card__button"}>Join</button>
+                            <button className={"card__button"} onClick={navigateToChatRoom}>Join</button>
                                 <div className="user">
                                     <img
                                         src="https://yt3.ggpht.com/a/AGF-l7-0J1G0Ue0mcZMw-99kMeVuBmRxiPjyvIYONg=s900-c-k-c0xffffffff-no-rj-mo"
