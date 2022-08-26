@@ -54,7 +54,7 @@ const Cards = () => {
                                 <span className="tag tag-teal">Marathon</span>
                                 <p className="card__snippet">{event.description}</p>
                                 <div className="card__lowerBanner">
-                            <button className={"card__button"} onClick={navigateToChatRoom}>Join</button>
+                                <button className={"card__button"} onClick={navigateToChatRoom}>Join</button>
                                 <div className="user">
                                     <img
                                         src="https://yt3.ggpht.com/a/AGF-l7-0J1G0Ue0mcZMw-99kMeVuBmRxiPjyvIYONg=s900-c-k-c0xffffffff-no-rj-mo"

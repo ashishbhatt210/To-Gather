@@ -22,6 +22,23 @@
   font-family: Impact;
 }
 
+.navbar{
+  height: 60px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+
+span.navbar-brand{
+  font-size: xx-large;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: coral;
+}
+
+span.navbar-brand:hover{
+  color: coral;
+  cursor: pointer;
+}
 
 
 
@@ -60,14 +77,23 @@
 }
 
 .item_name{
-color: blanchedalmond;
+  color: blanchedalmond;
   font-size: 14px;
   margin: 0 auto;
   font-weight: bold;
 
 }
 
+.btn.coral-class{
+  border-color: white;
+  color: white;
+}
 
+.btn.coral-class:hover{
+  border-color: coral;
+  color: white;
+  background-color: coral;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
