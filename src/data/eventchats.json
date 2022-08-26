@@ -1,0 +1,34 @@
+{
+  "chats": [
+    {
+      "eventId": "1",
+      "messaging": [
+        {
+          "authorId": "0",
+          "text": "Hi!",
+          "time": "212121212"
+        },
+        {
+          "authorId": "3",
+          "text": "Hello!",
+          "time": "212121212"
+        }
+      ]
+    },
+    {
+      "eventId": "2",
+      "messaging": [
+        {
+          "authorId": "0",
+          "text": "Hi!",
+          "time": "212121212"
+        },
+        {
+          "authorId": "3",
+          "text": "Hello!",
+          "time": "212121212"
+        }
+      ]
+    }
+  ]
+}
