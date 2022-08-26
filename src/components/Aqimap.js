@@ -3,6 +3,8 @@ import Map, {Marker, Popup} from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import "../App.css"
 import  countries from "../data/latitues_longitudes.json"
+import danger from "../assets/danger.png";
+
 
 const MAPBOX_TOKEN = 'pk.eyJ1IjoiZ29kZmxhbWUiLCJhIjoiY2w3ODN5bXI2MDV6bDNybzN1N21hZnJyaSJ9.kNtArpczBGeDcqGNZCk2yQ'; // Set your mapbox token here
 const baseURL = 'http://api.openweathermap.org/data/2.5/air_pollution?';
@@ -65,7 +67,7 @@ const Aquimap = () => {
                                         setCoordinate(country)
                                     })
                             }}>
-                            <img src="https://www.linkpicture.com/q/danger_2.png" alt="Skate Park Icon" width="50"/>
+                            <img src={danger} alt="Skate Park Icon" width="50"/>
                         </button>
                     </Marker>
                     ))}
