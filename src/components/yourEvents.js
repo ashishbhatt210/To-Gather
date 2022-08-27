@@ -3,53 +3,44 @@ import Marquee from "react-fast-marquee";
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import './yourEvents.css'
 import '../App.css'
-import '../cards.scss'
-import icon from "../assets/map_danger_icon.png";
+import icon from "../assets/image.gif";
 
 const yourEvents = () => {
     return (
         <div className="shell">
+            <div className={"w-100  justify-content-center d-flex flex-column"}>
+                <img src={icon} alt=" Icon" width="90" className={"m-4 align-self-center"} />
+                <h1 className={"text-setting"}> Create Events </h1>
+                <p className={"my-2 text-setting2  align-self_center "}>
+                    Below are some of the ongoing events for the betterment of the society. Feel free to join these and make some positive change.
+                </p>
+            </div>
             <div className="container">
                 <div className="card">
                     <div className="imgBx">
-                        <img src="http://pngimg.com/uploads/running_shoes/running_shoes_PNG5782.png" alt="nike-air-shoe"></img>
+                        <img src={icon} alt="nike-air-shoe"></img>
                     </div>
-
                     <div className="contentBx">
-
                         <h2>Create An Event</h2>
-
                         <div className="size">
-                            <h3>Event Name :</h3>
-                            <input type={"textbox"}></input>
+                            <input className="input-form" placeholder="Event Name" type={"textbox"}></input>
                         </div>
-
                         <div className="color">
-                            <h3>Description :</h3>
-                            <input type={"textarea"}></input>
+                            <textarea className="input1" name="message" placeholder="Event Description" spellcheck="false"></textarea>
                         </div>
-                        <div class="container d-flex justify-content-center align-items-center">
-                            <div class="dropdown">
-                                <button class="btn btn-outline-danger dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
-                                    <span>Event Type</span>
-                                    <i class="fa fa-caret-down"></i>
-                                </button>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <li><a class="dropdown-item" href="#">Environmental</a></li>
-                                    <li><a class="dropdown-item" href="#">Social</a></li>
-                                    <li><a class="dropdown-item" href="#">Other</a></li>
-                                </ul>
-                            </div>
-
+                        <div class="box">
+                            <select>
+                                <option>Event Type</option>
+                                <option>Reforestration</option>
+                                <option>Marathon</option>
+                                <option>Cleaning</option>
+                                <option>Others</option>
+                            </select>
                         </div>
                         <a href="#">Create Now</a>
                     </div>
-
                 </div>
             </div>
-
-
-
             <div className="container">
                 <div className="row">
                     <div className="col-md-3">
@@ -137,7 +128,6 @@ const yourEvents = () => {
                 </div>
             </div>
         </div>
-
     );
 }
 
