@@ -5,12 +5,13 @@ import './Cards.css'
 import '../App.css'
 import '../cards.scss'
 import icon from "../assets/event_icon.png";
+import userData from "../data/user.json"
 const Cards = () => {
     const [events, setEvents] = useState([]);
     const navigate = useNavigate();
     const navigateToChatRoom = () => {
         // 👇️ navigate to /contacts
-        navigate('/chatrroom');
+        navigate('/chatroom');
     };
     useEffect(() => {
 
@@ -58,11 +59,11 @@ const Cards = () => {
                                 <button className={"card__button"} onClick={navigateToChatRoom}>Join</button>
                                 <div className="user">
                                     <img
-                                        src="https://yt3.ggpht.com/a/AGF-l7-0J1G0Ue0mcZMw-99kMeVuBmRxiPjyvIYONg=s900-c-k-c0xffffffff-no-rj-mo"
+                                        src={userData.users[event.authorId].image}
                                         alt="user"/>
-                                    <div className="user-info">
-                                        <h5>July Dec</h5>
-                                        <small>2h ago</small>
+                                    <div className="user-info mx-2">
+                                        <h5>{userData.users[event.authorId].name}</h5>
+                                        <small className="text-light ">{event.authorId}h ago</small>
                                     </div>
                                 </div>
                                 </div>

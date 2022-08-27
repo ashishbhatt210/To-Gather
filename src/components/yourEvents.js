@@ -5,9 +5,15 @@ import './yourEvents.css'
 import '../App.css'
 import icon from "../assets/community.png";
 import eventData from "../data/eventData.json"
+import countries from "../data/latitues_longitudes.json";
 
 const YourEvents = () => {
     const [events, setEvents] = useState(eventData.events);
+
+    const [title, setTitle] = useState("");
+    const [description, setDescription] = useState("");
+    const [type, setType] = useState("Event Type");
+
     const currentUser=0;
     useEffect(() => {
 
@@ -18,7 +24,72 @@ const YourEvents = () => {
                 setEvents(data);
             })
 
-    }, []);
+    }, [setEvents]);
+
+
+    let name,value;
+    const changeDetail =(event)=>
+    {
+        name=event.target.name;
+        value=event.target.value;
+        if(name === "title")
+        {
+            setTitle(value);
+        }
+        else if(name === "description"){
+            setDescription(value);
+        }
+        else {
+            setType(value);
+        }
+    }
+
+    const createEventNew =async (event)=>{
+        const author ="Rahul Singh"
+        const authorId ="Rahul Singh"
+        const date = 22/12/2022
+        const id=events.length
+        const image="https://images.unsplash.com/photo-1605012856586-6049d9cf355c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80 387w"
+        const no_participant =0
+        await fetch(`https://climex-5bd2f-default-rtdb.firebaseio.com/eventList/${currentUser}/${events.length}.json`, {
+            method: 'PUT',
+            body: JSON.stringify({
+                author,
+                authorId,
+                description,
+                date,
+                id,
+                image,
+                no_participant,
+                title,
+                type
+            }),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+        }).catch((err) => {
+            console.log(err.message);
+        });
+        events.push({
+            author,
+            authorId,
+            description,
+            date,
+            id,
+            image,
+            no_participant,
+            title,
+            type
+        })
+        setEvents(events)
+    }
+
+
+
+
+
+
+
 
 
     return (
@@ -38,14 +109,14 @@ const YourEvents = () => {
                     <div className="contentBx">
                         <h2>Host An Event</h2>
                         <div className="size">
-                            <input className="input-form" placeholder="Event Name" type={"textbox"}></input>
+                            <input className="input-form" placeholder="Event Name" type={"textbox"} value={title} onChange={changeDetail} name="title"></input>
                         </div>
                         <div className="color">
-                            <textarea className="input1" name="message" placeholder="Event Description" spellcheck="false"></textarea>
+                            <textarea className="input1" name="message" placeholder="Event Description" spellcheck="false" value={description} onChange={changeDetail} name="description"></textarea>
                         </div>
                         <div className="centering_div d-flex flex-row">
                         <div className="box">
-                            <select>
+                            <select value={type} onChange={changeDetail} name="type">
                                 <option>Event Type</option>
                                 <option>Reforestration</option>
                                 <option>Marathon</option>
@@ -53,7 +124,7 @@ const YourEvents = () => {
                                 <option>Others</option>
                             </select>
                         </div>
-                        <button className="button-form">Create</button>
+                        <button className="button-form" onClick={createEventNew}>Create</button>
                         </div>
                     </div>
                 </div>
@@ -62,7 +133,7 @@ const YourEvents = () => {
                 <div className="row">
 
 
-                            <div className="col-md-3">
+                        <div className="col-md-3">
                         <div className="wsk-cp-product">
                         <div className="wsk-cp-img">
                         <img
