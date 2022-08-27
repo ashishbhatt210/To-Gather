@@ -7,9 +7,10 @@
   pointer-events: none;
 }
 .map_container{
-  height: 500px;
-  display: inline-block;
+  width: 100%;
+  display: flex;
   margin-top: 30px;
+  justify-content: space-between;
 }
 .outer_container_big{
   width: 100%;

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Map, {Marker, Popup} from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import "../App.css"
+import "./Aquimap.css"
 import  countries from "../data/latitues_longitudes.json"
 import danger from "../assets/danger.png";
 
@@ -35,17 +36,15 @@ const Aquimap = () => {
     }, []);
 
     return (
-        <div  className={"map_container"} >
+        <div  className={"map_container d-flex flex-row  "} >
             <Map
                 initialViewState={{
                     latitude: 28.72,
                     longitude: 77.45,
-                    zoom: 8
+                    zoom: 8}
 
                 }
-
-                }
-                style={{width: "1000px", height: "500px"}}
+                style={{width: "51%", height: "600px",marginLeft: "6%",borderRadius:"20px" ,boxShadow:"14px 14px 20px #000000, -14px -14px 20px #000000"}}
                 mapStyle="mapbox://styles/mapbox/streets-v9"
 
                 mapboxAccessToken={MAPBOX_TOKEN}
@@ -113,6 +112,23 @@ const Aquimap = () => {
                 }
 
             </Map>
+
+
+            <div className="container_box">
+
+                <div className="brand-title">Search Any Location </div>
+                <div className="inputs-form">
+                    <label className={"label-form font-weight-bold"}>CITY *</label>
+                    <input className={" input-form "} type="text" placeholder="City"/>
+                    <label className={"label-form font-weight-bold"}>STATE</label>
+                    <input className={" input-form "} type="text" placeholder="State"/>
+                    <label className={"label-form font-weight-bold"}>COUNTRY *</label>
+                    <input className={" input-form "} type="text" placeholder="Country"/>
+                    <button className={"button-form button-form mt-5"} type="submit">SEARCH</button>
+                </div>
+            </div>
+
+
         </div>
 
     );

@@ -57,7 +57,7 @@ const postMessage =(event)=>{
 
             })
 
-    }, [setMessaging]);
+    }, [messagesList]);
 
 
     return (
