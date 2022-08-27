@@ -92,3 +92,22 @@ input {
     box-shadow: none;
 }
 
+.brand-logo {
+    height: 100px;
+    width: 100px;
+    margin-top: 30px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    box-shadow: 7px 7px 10px #000000, -7px -7px 10px black;
+}
+
+.brand-title-again {
+    margin-top: 50px;
+    margin-left: 150px;
+    align-self: center;
+    font-weight: 900;
+    font-size: 3rem;
+    color: #F2AA4CFF;
+    letter-spacing: 1px;
+    font-family: Impact;
+}
