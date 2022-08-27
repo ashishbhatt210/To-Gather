@@ -3,9 +3,24 @@ import Marquee from "react-fast-marquee";
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import './yourEvents.css'
 import '../App.css'
-import icon from "../assets/image.gif";
+import icon from "../assets/community.png";
+import eventData from "../data/eventData.json"
 
-const yourEvents = () => {
+const YourEvents = () => {
+    const [events, setEvents] = useState(eventData.events);
+    const currentUser=0;
+    useEffect(() => {
+
+        fetch(`https://climex-5bd2f-default-rtdb.firebaseio.com/eventList/${currentUser}.json`)
+            .then(results => results.json())
+            .then(data => {
+                console.log(data);
+                setEvents(data);
+            })
+
+    }, []);
+
+
     return (
         <div className="shell">
             <div className={"w-100  justify-content-center d-flex flex-column"}>
@@ -21,14 +36,15 @@ const yourEvents = () => {
                         <img src={icon} alt="nike-air-shoe"></img>
                     </div>
                     <div className="contentBx">
-                        <h2>Create An Event</h2>
+                        <h2>Host An Event</h2>
                         <div className="size">
                             <input className="input-form" placeholder="Event Name" type={"textbox"}></input>
                         </div>
                         <div className="color">
                             <textarea className="input1" name="message" placeholder="Event Description" spellcheck="false"></textarea>
                         </div>
-                        <div class="box">
+                        <div className="centering_div d-flex flex-row">
+                        <div className="box">
                             <select>
                                 <option>Event Type</option>
                                 <option>Reforestration</option>
@@ -37,98 +53,118 @@ const yourEvents = () => {
                                 <option>Others</option>
                             </select>
                         </div>
-                        <a href="#">Create Now</a>
+                        <button className="button-form">Create</button>
+                        </div>
                     </div>
                 </div>
             </div>
             <div className="container">
                 <div className="row">
+
+
+                            <div className="col-md-3">
+                        <div className="wsk-cp-product">
+                        <div className="wsk-cp-img">
+                        <img
+                        src={events[events.length-1].image}
+                        alt="Product" className="img-responsive"/>
+                        </div>
+                        <div className="wsk-cp-text">
+                        <div className="category">
+                        <span>{events[events.length-1].type}</span>
+                        </div>
+                        <div className="title-product">
+                        <h3>{events[events.length-1].title}</h3>
+                        </div>
+                        <div className="description-prod">
+                        <p>{events[events.length-1].description}</p>
+                        </div>
+                        <div className="card-footer">
+                        <div className="wcf-left"><span className="price">{events[events.length-1].no_participant} joined</span></div>
+                        <button className="button-74 wcf-right" role="button">Chat</button>
+                        </div>
+                        </div>
+                        </div>
+                        </div>
+
                     <div className="col-md-3">
                         <div className="wsk-cp-product">
                             <div className="wsk-cp-img">
-                                <img src="https://3.bp.blogspot.com/-eDeTttUjHxI/WVSvmI-552I/AAAAAAAAAKw/0T3LN6jABKMyEkTRUUQMFxpe6PLvtcMMwCPcBGAYYCw/s1600/001-culture-clash-matthew-gianoulis.jpg" alt="Product" className="img-responsive" />
+                                <img
+                                    src={events[events.length-2].image}
+                                    alt="Product" className="img-responsive"/>
                             </div>
                             <div className="wsk-cp-text">
                                 <div className="category">
-                                    <span>Program</span>
+                                    <span>{events[events.length-2].type}</span>
                                 </div>
                                 <div className="title-product">
-                                    <h3>My face not my heart</h3>
+                                    <h3>{events[events.length-2].title}</h3>
                                 </div>
                                 <div className="description-prod">
-                                    <p>Description Product tell me how to change playlist height size like 600px in html5 player. player good work now check this link</p>
+                                    <p>{events[events.length-2].description}</p>
                                 </div>
                                 <div className="card-footer">
-                                    <div className="wcf-left"><span className="price">200 joined</span></div>
-                                    <button className="button-74 wcf-right" role="button">Join</button>
+                                    <div className="wcf-left"><span className="price">{events[events.length-2].no_participant} joined</span></div>
+                                    <button className="button-74 wcf-right" role="button">Chat</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div className="col-md-3">
                         <div className="wsk-cp-product">
-                            <div className="wsk-cp-img"><img src="https://1.bp.blogspot.com/-b-2SgNUrFHg/WVSvmewWqgI/AAAAAAAAAK0/1K4YCcbYjhokHwV_IgiVJN9mEnQoWunIwCPcBGAYYCw/s1600/fashion-portrait-nicole-6347.jpg" alt="Product" className="img-responsive" /></div>
+                            <div className="wsk-cp-img">
+                                <img
+                                    src={events[events.length-3].image}
+                                    alt="Product" className="img-responsive"/>
+                            </div>
                             <div className="wsk-cp-text">
                                 <div className="category">
-                                    <span>Program</span>
+                                    <span>{events[events.length-3].type}</span>
                                 </div>
                                 <div className="title-product">
-                                    <h3>My face not my heart</h3>
+                                    <h3>{events[events.length-3].title}</h3>
                                 </div>
                                 <div className="description-prod">
-                                    <p>Description Product tell me how to change playlist height size like 600px in html5 player. player good work now check this link</p>
+                                    <p>{events[events.length-3].description}</p>
                                 </div>
                                 <div className="card-footer">
-                                    <div className="wcf-left"><span className="price">89 joined</span></div>
-                                    <button className="button-74 wcf-right" role="button">Join</button>
+                                    <div className="wcf-left"><span className="price">{events[events.length-3].no_participant} joined</span></div>
+                                    <button className="button-74 wcf-right" role="button">Chat</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div className="col-md-3">
                         <div className="wsk-cp-product">
-                            <div className="wsk-cp-img"><img src="https://1.bp.blogspot.com/-XL_Ba-178Fo/WVSvm5AbApI/AAAAAAAAAK4/X5109HTqUiAhPjbmz4NFVHcpL7ZWe6T3ACPcBGAYYCw/s1600/wow-29.jpg" alt="Product" className="img-responsive" /></div>
+                            <div className="wsk-cp-img">
+                                <img
+                                    src={events[events.length-4].image}
+                                    alt="Product" className="img-responsive"/>
+                            </div>
                             <div className="wsk-cp-text">
                                 <div className="category">
-                                    <span>Contribute</span>
+                                    <span>{events[events.length-4].type}</span>
                                 </div>
                                 <div className="title-product">
-                                    <h3>My face not my heart</h3>
+                                    <h3>{events[events.length-4].title}</h3>
                                 </div>
                                 <div className="description-prod">
-                                    <p>Description Product tell me how to change playlist height size like 600px in html5 player. player good work now check this link</p>
+                                    <p>{events[events.length-4].description}</p>
                                 </div>
                                 <div className="card-footer">
-                                    <div className="wcf-left"><span className="price">50 joined</span></div>
-                                    <button className="button-74 wcf-right" role="button">Join</button>
+                                    <div className="wcf-left"><span className="price">{events[events.length-4].no_participant} joined</span></div>
+                                    <button className="button-74 wcf-right" role="button">Chat</button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div className="col-md-3">
-                        <div className="wsk-cp-product">
-                            <div className="wsk-cp-img"><img src="https://3.bp.blogspot.com/-iUes8qr4uC8/WVSvl6Wf_fI/AAAAAAAAAKs/JiTUUVvdbqEC_QGGaQhuVJiezIN3LIqEgCPcBGAYYCw/s1600/IMG_5367-bp.jpg" alt="Product" className="img-responsive" /></div>
-                            <div className="wsk-cp-text">
-                                <div className="category">
-                                    <span>Marathon</span>
-                                </div>
-                                <div className="title-product">
-                                    <h3>My face not my heart cvf ggf gfg g</h3>
-                                </div>
-                                <div className="description-prod">
-                                    <p>Description Product tell me how to change playlist height size like 600px in html5 player. player good work now check this link</p>
-                                </div>
-                                <div className="card-footer">
-                                    <div className="wcf-left"><span className="price">150 joined</span></div>
-                                    <button className="button-74 wcf-right" role="button">Join</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
+
                 </div>
             </div>
         </div>
     );
 }
 
-export default yourEvents;
+export default YourEvents;

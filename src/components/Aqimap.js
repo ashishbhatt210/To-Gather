@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, {useState, useEffect, useId} from "react";
 import Map, {Marker, Popup} from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import "../App.css"
 import "./Aquimap.css"
 import  countries from "../data/latitues_longitudes.json"
 import mark from "../assets/mark.png";
+import {nanoid} from "nanoid";
 
 
 const MAPBOX_TOKEN = 'pk.eyJ1IjoiZ29kZmxhbWUiLCJhIjoiY2w3ODN5bXI2MDV6bDNybzN1N21hZnJyaSJ9.kNtArpczBGeDcqGNZCk2yQ'; // Set your mapbox token here
@@ -60,7 +61,9 @@ else {
                 })
 
         countries.country.push({"latitude": points.latitude,
-            "longitude": points.longitude});
+            "longitude": points.longitude,
+        }
+        );
             setCountryList(countries.country);
 
 
@@ -94,7 +97,7 @@ else {
                 {
                     countryList.map(country => (
                     <Marker
-                        key={country.latitude+country.longitude}
+                        key={nanoid(5)}
                         style={{width: "50px", height: "50px"}}
                         longitude={country.longitude} latitude={country.latitude}>
                         <button

@@ -46,6 +46,7 @@ const Cards = () => {
                     >
                         {
                             events.map((event, id) => (
+
                             <div className="card">
                             <figure className="card__thumb">
                             <img src={event.image} alt="Picture by Kyle Cottrell" className="card__image"/>
@@ -68,7 +69,10 @@ const Cards = () => {
                             </figcaption>
                             </figure>
                             </div>
-                            ))}
+
+                            )
+                            )
+                        }
                     </Marquee>
                 </div>
             </div>
