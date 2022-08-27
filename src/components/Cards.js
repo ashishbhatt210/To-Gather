@@ -52,7 +52,7 @@ const Cards = () => {
                             <img src={event.image} alt="Picture by Kyle Cottrell" className="card__image"/>
                             <figcaption className="card__caption">
                             <h2 className="card__title">{event.title}</h2>
-                                <span className="tag tag-teal">Marathon</span>
+                                <span className="tag tag-teal">{event.type}</span>
                                 <p className="card__snippet">{event.description}</p>
                                 <div className="card__lowerBanner">
                                 <button className={"card__button"} onClick={navigateToChatRoom}>Join</button>
