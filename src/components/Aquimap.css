@@ -86,6 +86,8 @@ input {
     font-weight: 900;
     box-shadow: 6px 6px 6px black, -6px -6px 6px black;
     transition: 0.5s;
+    align-self: center;
+    margin-left: 140px;
 }
 
 .button-form:hover {

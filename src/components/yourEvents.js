@@ -101,7 +101,7 @@ const YourEvents = () => {
                     Below are some of the ongoing events for the betterment of the society. Feel free to join these and make some positive change.
                 </p>
             </div>
-            <div className="container">
+            <div className="container mt-5">
                 <div className="card">
                     <div className="imgBx">
                         <img src={icon} alt="nike-air-shoe"></img>
