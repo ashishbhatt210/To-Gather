@@ -26,22 +26,20 @@ const yourEvents = () => {
 
                         <div className="color">
                             <h3>Description :</h3>
-                            <input type={"textbox"}></input>
+                            <input type={"textarea"}></input>
                         </div>
                         <div class="container d-flex justify-content-center align-items-center">
-
                             <div class="dropdown">
                                 <button class="btn btn-outline-danger dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
-                                    <span>Countries</span>
+                                    <span>Event Type</span>
                                     <i class="fa fa-caret-down"></i>
                                 </button>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <li><a class="dropdown-item" href="#">Australia</a></li>
-                                    <li><a class="dropdown-item" href="#">India</a></li>
-                                    <li><a class="dropdown-item" href="#">United States</a></li>
+                                    <li><a class="dropdown-item" href="#">Environmental</a></li>
+                                    <li><a class="dropdown-item" href="#">Social</a></li>
+                                    <li><a class="dropdown-item" href="#">Other</a></li>
                                 </ul>
                             </div>
-
 
                         </div>
                         <a href="#">Create Now</a>
