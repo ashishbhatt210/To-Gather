@@ -112,7 +112,7 @@ const YourEvents = () => {
                             <input className="input-form" placeholder="Event Name" type={"textbox"} value={title} onChange={changeDetail} name="title"></input>
                         </div>
                         <div className="color">
-                            <textarea className="input1" name="Description" placeholder="Event Description" spellcheck="false" value={description} onChange={changeDetail}></textarea>
+                            <textarea className="input1" name="message" placeholder="Event Description" spellcheck="false" value={description} onChange={changeDetail} name="description"></textarea>
                         </div>
                         <div className="centering_div d-flex flex-row">
                         <div className="box">
