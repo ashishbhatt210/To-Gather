@@ -1,6 +1,6 @@
 import '../App.css';
 import Aquimap from './Aqimap';
-import CardApp from './Cards'
+import CardApp from './floatingCards/Cards'
 import Label from "./Logo"
 import Events from './yourEvents';
 import Footer from './footer';

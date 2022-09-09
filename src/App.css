@@ -7,7 +7,7 @@
   pointer-events: none;
 }
 .map_container{
-  width: 100%;
+  /* width: 100%; */
   display: flex;
   margin-top: 30px;
   justify-content: space-between;
@@ -46,7 +46,6 @@ span.navbar-brand:hover{
 .text-setting2{
   color: #F2AA4CFF;
   font-weight: bold;
-  width: 600px;
   align-self: center;
 }
 

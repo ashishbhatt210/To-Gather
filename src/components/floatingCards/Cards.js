@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import Marquee from "react-fast-marquee";
 import {Routes, Route, useNavigate} from 'react-router-dom';
 import './Cards.css'
-import '../App.css'
-import '../cards.scss'
-import icon from "../assets/event_icon.png";
-import userData from "../data/user.json"
+import '../../App.css'
+import './cards.scss'
+import icon from "../../assets/event_icon.png";
+import userData from "../../data/user.json"
 const Cards = () => {
     const [events, setEvents] = useState([]);
     const navigate = useNavigate();

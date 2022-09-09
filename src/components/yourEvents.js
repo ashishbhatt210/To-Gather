@@ -111,28 +111,27 @@ const YourEvents = () => {
                         <div className="size">
                             <input className="input-form" placeholder="Event Name" type={"textbox"} value={title} onChange={changeDetail} name="title"></input>
                         </div>
-                        <div className="color">
-                            <textarea className="input1" name="Description" placeholder="Event Description" spellcheck="false" value={description} onChange={changeDetail}></textarea>
+                        <div className="size">
+                            <textarea className="input1" placeholder="Event Description" type={"textbox"} value={description} onChange={changeDetail} name="description"></textarea>
                         </div>
                         <div className="centering_div d-flex flex-row">
                         <div className="box">
                             <select value={type} onChange={changeDetail} name="type">
                                 <option>Event Type</option>
                                 <option>Reforestration</option>
-                                <option>Marathon</option>
-                                <option>Cleaning</option>
+                                <option>Awareness</option>
+                                <option>Cleanliness</option>
                                 <option>Others</option>
                             </select>
                         </div>
-                        <button className="button-form" onClick={createEventNew}>Create</button>
+                        <button className="btn-form" onClick={createEventNew}>Create</button>
                         </div>
                     </div>
                 </div>
             </div>
+            
             <div className="container">
                 <div className="row">
-
-
                         <div className="col-md-3">
                         <div className="wsk-cp-product">
                         <div className="wsk-cp-img">
@@ -230,8 +229,6 @@ const YourEvents = () => {
                             </div>
                         </div>
                     </div>
-
-
                 </div>
             </div>
         </div>
