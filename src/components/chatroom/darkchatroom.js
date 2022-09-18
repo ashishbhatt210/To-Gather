@@ -1,8 +1,87 @@
+import { getValue } from "@testing-library/user-event/dist/utils";
+import { list } from "postcss";
 import React, { useState, useEffect } from "react";
 import "./darkchatroom.scss"
 import "./darkmode.js"
 
-const darkChatRoom = () => {
+
+
+
+
+const DarkChatRoom = () => {
+
+    const sendMessage = async () => {
+
+        const tex=message.toString()
+        var timestamp = new Date().getTime();
+        const authorId = currentAuthor.toString()
+        const text = tex.toString();
+        const time = timestamp
+        var timestamp = new Date().getTime();
+        const nextItem=messagesList.length;
+        await fetch(`https://climex-5bd2f-default-rtdb.firebaseio.com/messages/chats/${currentEvent}/messaging/${nextItem}.json`, {
+            method: 'PUT',
+            body: JSON.stringify({
+             authorId,
+              text,
+                time
+            }),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+        }).catch((err) => {
+                console.log(err.message);
+            });
+           setMessage(""); 
+    
+    };
+
+    const [eventList, seteventList] = useState([
+        {
+        "author": "Rahul Singh",
+        "authorId": 1,
+        "date": "22/5/2023",
+        "description": "We will clean delhi roads from Cp to Mayur Vihar. We welcome you all to come and become a part of this.",
+        "id": 1,
+        "image": "https://images.unsplash.com/photo-1618580298796-8c681e026369?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=385&q=80%20385w",
+        "no_participant": 4,
+        "title": "Let's Clean the City",
+        "type": "Cleanliness"
+      }
+    ]); 
+    const [messagesList, setmessagesList] = useState([ {
+        "authorId": 0,
+        "text": "",
+        "time": 212121212
+      }]);
+    const [usersList, setUserList] = useState([]);
+    const [currentEvent, setCurrentEvent] = useState(0);
+    const [currentAuthor, setCurrentAuthor] = useState(0);
+    const [message,setMessage]=useState("");
+    const [messaging, setMessaging] = useState({
+        "authorId": "",
+        "text": "",
+        "time": ""
+    });
+
+    useEffect(() => {
+
+        fetch('https://climex-5bd2f-default-rtdb.firebaseio.com/messages.json')
+            .then(results => results.json())
+            .then(data => {
+                setmessagesList(data.chats[parseInt(currentEvent)].messaging);
+                console.log(messagesList);
+            })
+
+        fetch(`https://climex-5bd2f-default-rtdb.firebaseio.com/eventList/${currentAuthor}.json`)
+        .then(results => results.json())
+        .then(data => {
+           return seteventList(data); 
+        })   
+
+    }, [messagesList]);
+
+
     return (
         <div className="app">
             <div className="header">
@@ -35,126 +114,39 @@ const darkChatRoom = () => {
                     <img className="user-profile account-profile" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3364143/download+%281%29.png" alt="" />
                 </div>
             </div>
-            <div className="wrapper">
-                <div className="conversation-area">
-                    <div className="msg online">
-                        <img className="msg-profile" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3364143/download+%281%29.png" alt="" />
+            <div className="wrapper">   
+                <div className="conversation-area">{
+                eventList.map(events => (   
+
+                    events.id!==currentEvent ?
+
+                    (<div className="msg online">
+                        <img className="msg-profile" src={events.image} alt="" />
                         <div className="msg-detail">
-                            <div className="msg-username">Madison Jones</div>
+                            <div className="msg-username">{events.title}</div>
                             <div className="msg-content">
-                                <span className="msg-message">What time was our meet</span>
+                                <span className="msg-message">{events.description}</span>
                                 <span className="msg-date">20m</span>
                             </div>
                         </div>
-                    </div>
-                    <div className="msg">
-                        <img className="msg-profile" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3364143/download+%2812%29.png" alt="" />
-                        <div className="msg-detail">
-                            <div className="msg-username">Miguel Cohen</div>
-                            <div className="msg-content">
-                                <span className="msg-message">Adaptogen taiyaki austin jean shorts brunch</span>
-                                <span className="msg-date">20m</span>
-                            </div>
-                        </div>
-                    </div>
+                    </div>):(
                     <div className="msg active">
-                        <div className="msg-profile group">
-                            <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" className="css-i6dzq1">
-                                <path d="M12 2l10 6.5v7L12 22 2 15.5v-7L12 2zM12 22v-6.5" />
-                                <path d="M22 8.5l-10 7-10-7" />
-                                <path d="M2 15.5l10-7 10 7M12 2v6.5" /></svg>
-                        </div>
+                        <img className="msg-profile" src={events.image} alt="" />
                         <div className="msg-detail">
-                            <div className="msg-username">CodePen Group</div>
+                            <div className="msg-username">{events.title}</div>
                             <div className="msg-content">
-                                <span className="msg-message">Aysenur: I love CSS</span>
+                                <span className="msg-message">{events.description}</span>
                                 <span className="msg-date">28m</span>
                             </div>
                         </div>
-                    </div>
-                    <div className="msg online">
-                        <img className="msg-profile" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3364143/download+%282%29.png" alt="" />
-                        <div className="msg-detail">
-                            <div className="msg-username">Lea Debere</div>
-                            <div className="msg-content">
-                                <span className="msg-message">Shoreditch iPhone jianbing</span>
-                                <span className="msg-date">45m</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="msg online">
-                        <img className="msg-profile" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3364143/download+%281%29+%281%29.png" alt="" />
-                        <div className="msg-detail">
-                            <div className="msg-username">Jordan Smith</div>
-                            <div className="msg-content">
-                                <span className="msg-message">Snackwave craft beer raclette, beard kombucha </span>
-                                <span className="msg-date">2h</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="msg">
-                        <img className="msg-profile" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3364143/download+%284%29+%281%29.png" alt="" />
-                        <div className="msg-detail">
-                            <div className="msg-username">Jared Jackson</div>
-                            <div className="msg-content">
-                                <span className="msg-message">Tattooed brooklyn typewriter gastropub</span>
-                                <span className="msg-date">18m</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="msg online">
-                        <img className="msg-profile" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3364143/download+%283%29+%281%29.png" alt="" />
-                            <div className="msg-detail">
-                                <div className="msg-username">Henry Clark</div>
-                                <div className="msg-content">
-                                    <span className="msg-message">Ethical typewriter williamsburg lo-fi street art</span>
-                                    <span className="msg-date">2h</span>
-                                </div>
-                            </div>
-                    </div>
-                    <div className="msg">
-                        <img className="msg-profile" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3364143/qs6F3dgm.png" alt="" />
-                        <div className="msg-detail">
-                            <div className="msg-username">Jason Mraz</div>
-                            <div className="msg-content">
-                                <span className="msg-message">I'm lucky I'm in love with my best friend</span>
-                                <span className="msg-date">4h</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="msg">
-                        <img className="msg-profile" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3364143/download+%288%29.png" alt="" />
-                        <div className="msg-detail">
-                            <div className="msg-username">Chiwa Lauren</div>
-                            <div className="msg-content">
-                                <span className="msg-message">Pabst af 3 wolf moon</span>
-                                <span className="msg-date">28m</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="msg">
-                        <img className="msg-profile" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3364143/download+%289%29.png" alt="" />
-                        <div className="msg-detail">
-                            <div className="msg-username">Caroline Orange</div>
-                            <div className="msg-content">
-                                <span className="msg-message">Bespoke aesthetic lyft woke cornhole</span>
-                                <span className="msg-date">35m</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="msg">
-                        <img className="msg-profile" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3364143/download+%286%29.png" alt="" />
-                        <div className="msg-detail">
-                            <div className="msg-username">Lina Ashma</div>
-                            <div className="msg-content">
-                                <span className="msg-message">Migas food truck crucifix vexi</span>
-                                <span className="msg-date">42m</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="overlay"></div>
+                    </div>)
+                   
+                ))              
+               }
+                <div className="overlay">         
+               </div>
                 </div>
-                <div className="chat-area">
+                <div className="chat-area"> 
                     <div className="chat-area-header">
                         <div className="chat-area-title">CodePen Group</div>
                         <div className="chat-area-group">
@@ -165,84 +157,31 @@ const darkChatRoom = () => {
                         </div>
                     </div>
                     <div className="chat-area-main">
-                        <div className="chat-msg">
+
+                      {  
+                       messagesList.map(chats => (
+                        chats.authorId !== currentAuthor.toString() ?
+                        (<div className="chat-msg">
                             <div className="chat-msg-profile">
                                 <img className="chat-msg-img" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3364143/download+%283%29+%281%29.png" alt="" />
                                 <div className="chat-msg-date">Message seen 1.22pm</div>
                             </div>
                             <div className="chat-msg-content">
-                                <div className="chat-msg-text">Luctus et ultrices posuere cubilia curae.</div>
-                                <div className="chat-msg-text">
-                                    <img src="https://media0.giphy.com/media/yYSSBtDgbbRzq/giphy.gif?cid=ecf05e47344fb5d835f832a976d1007c241548cc4eea4e7e&rid=giphy.gif" /></div>
-                                <div className="chat-msg-text">Neque gravida in fermentum et sollicitudin ac orci phasellus egestas. Pretium lectus quam id leo.</div>
+                                 <div className="chat-msg-text">{chats.text}</div>
                             </div>
-                        </div>
-                        <div className="chat-msg owner">
+                        </div>):
+                        (<div className="chat-msg owner">
                             <div className="chat-msg-profile">
                                 <img className="chat-msg-img" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3364143/download+%281%29.png" alt="" />
                                 <div className="chat-msg-date">Message seen 1.22pm</div>
                             </div>
                             <div className="chat-msg-content">
-                                <div className="chat-msg-text">Sit amet risus nullam eget felis eget. Dolor sed viverra ipsum😂😂😂</div>
-                                <div className="chat-msg-text">Cras mollis nec arcu malesuada tincidunt.</div>
+                                <div className="chat-msg-text">{chats.text}</div>
                             </div>
-                        </div>
-                        <div className="chat-msg">
-                            <div className="chat-msg-profile">
-                                <img className="chat-msg-img" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3364143/download+%282%29.png" alt="" />
-                                    <div className="chat-msg-date">Message seen 2.45pm</div>
-                            </div>
-                            <div className="chat-msg-content">
-                                <div className="chat-msg-text">Aenean tristique maximus tortor non tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae😊</div>
-                                <div className="chat-msg-text">Ut faucibus pulvinar elementum integer enim neque volutpat.</div>
-                            </div>
-                        </div>
-                        <div className="chat-msg owner">
-                            <div className="chat-msg-profile">
-                                <img className="chat-msg-img" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3364143/download+%281%29.png" alt="" />
-                                <div className="chat-msg-date">Message seen 2.50pm</div>
-                            </div>
-                            <div className="chat-msg-content">
-                                <div className="chat-msg-text">posuere eget augue sodales, aliquet posuere eros.</div>
-                                <div className="chat-msg-text">Cras mollis nec arcu malesuada tincidunt.</div>
-                            </div>
-                        </div>
-                        <div className="chat-msg">
-                            <div className="chat-msg-profile">
-                                <img className="chat-msg-img" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3364143/download+%2812%29.png" alt="" />
-                                <div className="chat-msg-date">Message seen 3.16pm</div>
-                            </div>
-                            <div className="chat-msg-content">
-                                <div className="chat-msg-text">Egestas tellus rutrum tellus pellentesque</div>
-                            </div>
-                        </div>
-                        <div className="chat-msg">
-                            <div className="chat-msg-profile">
-                                <img className="chat-msg-img account-profile" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3364143/download+%283%29+%281%29.png" alt="" />
-                                    <div className="chat-msg-date">Message seen 3.16pm</div>
-                            </div>
-                            <div className="chat-msg-content">
-                                <div className="chat-msg-text">Consectetur adipiscing elit pellentesque habitant morbi tristique senectus et.</div>
-                            </div>
-                        </div>
-                        <div className="chat-msg owner">
-                            <div className="chat-msg-profile">
-                                <img className="chat-msg-img" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3364143/download+%281%29.png" alt="" />
-                                <div className="chat-msg-date">Message seen 2.50pm</div>
-                            </div>
-                            <div className="chat-msg-content">
-                                <div className="chat-msg-text">Tincidunt arcu non sodales😂</div>
-                            </div>
-                        </div>
-                        <div className="chat-msg">
-                            <div className="chat-msg-profile">
-                                <img className="chat-msg-img" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3364143/download+%282%29.png" alt=""/>
-                                    <div className="chat-msg-date">Message seen 3.16pm</div>
-                            </div>
-                            <div className="chat-msg-content">
-                                <div className="chat-msg-text">Consectetur adipiscing elit pellentesque habitant morbi tristique senectus et🥰</div>
-                            </div>
-                        </div>
+                        </div>)
+                        
+                       ))
+                        }
                     </div>
                     <div className="chat-area-footer">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" className="feather feather-video">
@@ -257,7 +196,13 @@ const darkChatRoom = () => {
                             <path d="M12 8v8M8 12h8" /></svg>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" className="feather feather-paperclip">
                             <path d="M21.44 11.05l-9.19 9.19a6 6 0 01-8.49-8.49l9.19-9.19a4 4 0 015.66 5.66l-9.2 9.19a2 2 0 01-2.83-2.83l8.49-8.48" /></svg>
-                        <input type="text" placeholder="Type something here..." />
+                        <input type="text" placeholder="Type something here..."  onChange={(e) => {setMessage(e.target.value);}}
+                         onKeyPress={(e) => {
+                        if (e.key === "Enter") {
+                            sendMessage();
+                            e.target.value="";
+                        }
+                    }}/>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" className="feather feather-smile">
                             <circle cx="12" cy="12" r="10" />
                             <path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01" /></svg>
@@ -270,4 +215,4 @@ const darkChatRoom = () => {
     )
 }
 
-export default darkChatRoom;
+export default DarkChatRoom;
