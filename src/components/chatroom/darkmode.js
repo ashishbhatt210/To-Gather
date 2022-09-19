@@ -10,8 +10,10 @@ colors.forEach(color => {
   });
 });
 
-
-// toggleButton.addEventListener('click', () => {
-//     document.body.classList.toggle('dark-mode');
-// });
-
+(function (){
+  if(toggleButton != null){
+    toggleButton.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+    });
+  }
+})();

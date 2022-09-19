@@ -70,7 +70,7 @@ const DarkChatRoom = () => {
             .then(results => results.json())
             .then(data => {
                 setmessagesList(data.chats[parseInt(currentEvent)].messaging);
-                console.log(messagesList);
+                // console.log(messagesList);
             })
 
         fetch(`https://climex-5bd2f-default-rtdb.firebaseio.com/eventList/${currentAuthor}.json`)
@@ -87,16 +87,6 @@ const DarkChatRoom = () => {
             <div className="header">
                 <div className="logo">
                     <span className="navbar-brand mx-4"  href="#">TO-GATHER</span>
-                    <div className="collapse" id="navbarSupportedContent">
-                        <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li className="nav-item mx-2">
-                                <a className="nav-link " aria-current="page" href="/">Home</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link " href="/chatroom">Discussion</a>
-                            </li>
-                        </ul>
-                    </div>
                 </div>
                 <div className="search-bar">
                     <input type="text" placeholder="Search..." />
@@ -105,11 +95,6 @@ const DarkChatRoom = () => {
                     <div className="dark-light">
                         <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" /></svg>
-                    </div>
-                    <div className="settings">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="3" />
-                            <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z" /></svg>
                     </div>
                     <img className="user-profile account-profile" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3364143/download+%281%29.png" alt="" />
                 </div>
@@ -143,8 +128,6 @@ const DarkChatRoom = () => {
                    
                 ))              
                }
-                <div className="overlay">         
-               </div>
                 </div>
                 <div className="chat-area"> 
                     <div className="chat-area-header">

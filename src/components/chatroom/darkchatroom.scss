@@ -165,7 +165,6 @@ html {
     height: 80px;
     z-index: 3;
     position: relative;
-    margin-left: 280px;
 
     input {
         height: 100%;
@@ -191,7 +190,6 @@ html {
 
 .logo {
     color: var(--theme-color);
-    width: 38px;
     flex-shrink: 0;
 
     svg {
