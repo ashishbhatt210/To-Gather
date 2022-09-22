@@ -5,7 +5,7 @@
 	box-sizing: border-box;
 }
 
-/* body {
+.outerlogin-container{
 	background: #f6f5f7;
 	display: flex;
 	justify-content: center;
@@ -13,8 +13,10 @@
 	flex-direction: column;
 	font-family: 'Montserrat', sans-serif;
 	height: 100vh;
+	overflow: hidden;
 	margin: -20px 0 50px;
-} */
+}
+
 
 .signIn-h1-tag {
 	font-weight: bold;
