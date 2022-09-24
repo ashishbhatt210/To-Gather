@@ -86,7 +86,9 @@ const DarkChatRoom = () => {
         <div className="app">
             <div className="header">
                 <div className="logo">
-                    <span className="navbar-brand mx-4"  href="#">TO-GATHER</span>
+                    <a className="navbar-link" href="/">
+                        <span className="navbar-brand mx-4"  href="/">TO-GATHER</span>
+                    </a>
                 </div>
                 <div className="search-bar">
                     <input type="text" placeholder="Search..." />
@@ -131,7 +133,7 @@ const DarkChatRoom = () => {
                 </div>
                 <div className="chat-area"> 
                     <div className="chat-area-header">
-                        <div className="chat-area-title">CodePen Group</div>
+                        <div className="chat-area-title">Protect Wildlife</div>
                         <div className="chat-area-group">
                             <img className="chat-area-profile" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3364143/download+%283%29+%281%29.png" alt="" />
                             <img className="chat-area-profile" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3364143/download+%282%29.png" alt="" />
