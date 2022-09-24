@@ -18,10 +18,8 @@ const Cards = () => {
          fetch('https://climex-5bd2f-default-rtdb.firebaseio.com/events.json')
             .then(results => results.json())
             .then(data => {
-                console.log(data);
                 setEvents(data);
             })
-
     }, []);
 
 

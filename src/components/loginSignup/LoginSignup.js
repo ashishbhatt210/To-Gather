@@ -10,10 +10,10 @@ const LoginSignUp = () => {
                     <form className="signIn-form-tag" action="#">
                         <h1 className="signIn-h1-tag">Create Account</h1>
                         <div className="social-container-1">
-                            <ul class="social-icons">
-                                <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a class="google-plus" href="#"><i class="fa fa-google-plus"></i></a></li>
-                                <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+                            <ul className="social-icons">
+                                <li><a className="facebook" href="#"><i className="fa fa-facebook"></i></a></li>
+                                <li><a className="google-plus" href="#"><i className="fa fa-google-plus"></i></a></li>
+                                <li><a className="linkedin" href="#"><i className="fa fa-linkedin"></i></a></li>
                             </ul>
                         </div>
                         <span className="signIn-span-tag">or use your email for registration</span>
@@ -27,10 +27,10 @@ const LoginSignUp = () => {
                     <form className="signIn-form-tag" action="#">
                         <h1 className="signIn-h1-tag">Sign in</h1>
                         <div className="social-container-1">
-                            <ul class="social-icons">
-                                <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a class="google-plus" href="#"><i class="fa fa-google-plus"></i></a></li>
-                                <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+                            <ul className="social-icons">
+                                <li><a className="facebook" href="#"><i className="fa fa-facebook"></i></a></li>
+                                <li><a className="google-plus" href="#"><i className="fa fa-google-plus"></i></a></li>
+                                <li><a className="linkedin" href="#"><i className="fa fa-linkedin"></i></a></li>
                             </ul>
                         </div>
                         <span className="signIn-span-tag">or use your account</span>

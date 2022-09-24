@@ -20,7 +20,6 @@ const YourEvents = () => {
         fetch(`https://climex-5bd2f-default-rtdb.firebaseio.com/eventList/${currentUser}.json`)
             .then(results => results.json())
             .then(data => {
-                console.log(data);
                 setEvents(data);
             })
 
