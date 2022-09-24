@@ -101,9 +101,9 @@
     box-sizing: border-box;
 }
 
-img {
-    max-width: 100%;
-}
+// img {
+//     max-width: 100%;
+// }
 
 body {
     background-color: var(--body-bg-color);
@@ -111,10 +111,10 @@ body {
     color: var(--body-color);
 }
 
-// html {
-//     box-sizing: border-box;
-//     -webkit-font-smoothing: antialiased;
-// }
+html {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
 
 .app {
     display: flex;
