@@ -12,7 +12,9 @@ function Home() {
                         <Label/>
                         <Aquimap/>
                         <CardApp/>
-                        <Events/>
+                        {
+                           localStorage.getItem('email')== ""? null:<Events/>
+                        }
                         <Footer/>
         </div>
     );

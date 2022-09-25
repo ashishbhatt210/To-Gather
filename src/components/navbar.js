@@ -18,6 +18,14 @@ const Navbar = () => {
         navigate('/login-signup');
    
     }
+    function divert()
+    {
+        if(localStorage.getItem('email')== "")
+        navigate('/login-signup');
+        else
+        navigate('/chatroom');
+
+    }
 
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark sticky-top ">
@@ -32,7 +40,11 @@ const Navbar = () => {
                             <a className="nav-link " aria-current="page" href="/">Home</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link " href="/chatroom">Discussion</a>
+                            {
+                                localStorage.getItem('email')== ""?
+                            (<a className="nav-link " href="/login-signup">Discussion</a>  ):
+                            (<a className="nav-link " href="/chatroom">Discussion</a>  )
+}
                         </li>
                         {/* <li className="nav-item dropdown">
                             <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
