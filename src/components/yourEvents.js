@@ -45,6 +45,7 @@ const YourEvents = () => {
     }
 
     const createEventNew =async (event)=>{
+        if(title!=""&&description!=""&&type!="Event Type"){
         const author ="Rahul Singh"
         const authorId ="Rahul Singh"
         const date = 22/12/2022
@@ -83,14 +84,10 @@ const YourEvents = () => {
         })
         setEvents(events)
     }
-
-
-
-
-
-
-
-
+    else{
+        alert("please enter all the data");
+    }
+    }
 
     return (
         <div className="shell">

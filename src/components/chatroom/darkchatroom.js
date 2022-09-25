@@ -16,12 +16,13 @@ console.log("ritik");
 const DarkChatRoom = () => {
 
     const sendMessage = async () => {
-
+      if(message!=""){
         const tex=message.toString()
         var timestamp = new Date().getTime();
         const authorId = currentAuthor.toString()
         const text = tex.toString();
         const time = timestamp
+        
         var timestamp = new Date().getTime();
         const nextItem=messagesList.length;
         await fetch(`https://climex-5bd2f-default-rtdb.firebaseio.com/messages/chats/${currentEvent}/messaging/${nextItem}.json`, {
@@ -38,6 +39,7 @@ const DarkChatRoom = () => {
                 console.log(err.message);
             });
            setMessage("");     
+        }
     };
 
     const [eventList, seteventList] = useState([
@@ -73,7 +75,10 @@ const DarkChatRoom = () => {
         fetch('https://climex-5bd2f-default-rtdb.firebaseio.com/messages.json')
             .then(results => results.json())
             .then(data => {
+                if(data.chats[parseInt(currentEvent)].messaging.length!=messagesList.length)
+                scrolldown();
                 setmessagesList(data.chats[parseInt(currentEvent)].messaging);
+
                 // console.log(messagesList);
             })
 
@@ -82,8 +87,6 @@ const DarkChatRoom = () => {
         .then(data => {
            return seteventList(data); 
         })   
-
-        scrolldown();
     }, [messagesList]);
 
 
