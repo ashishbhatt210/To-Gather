@@ -11,6 +11,9 @@ const Cards = () => {
     const navigate = useNavigate();
     const navigateToChatRoom = () => {
         // 👇️ navigate to /contacts
+        if(localStorage.getItem('email')== "")
+        navigate('/login-signup');
+        else
         navigate('/chatroom');
     };
     useEffect(() => {
