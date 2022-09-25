@@ -48,6 +48,7 @@ const Aquimap = () => {
         }
     }
     const putOnMap = (event) => {
+        if(city!=""||state!=""||country!=""){
         // http://api.openweathermap.org/geo/1.0/direct?q={city name},{state code},{country code}&limit={limit}&appid={API key}
         fetch(`${baseURL2}q=${city},${state},${country}&limit=1&appid=${apiKey}`)
             .then(results => results.json())
@@ -77,6 +78,10 @@ const Aquimap = () => {
                 else
                     setBackgroundImg("SAFE")
             })
+        }
+        else{
+            alert("please enter atleast one of the location");
+        }
     }
 
 
