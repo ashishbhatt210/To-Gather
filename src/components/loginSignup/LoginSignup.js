@@ -4,6 +4,11 @@ import "./loginFunction.js"
 import "./login.css"
 
 const LoginSignUp = () => {
+    if(localStorage.getItem('name')=="")
+    {
+        localStorage.setItem('name',"avatar")
+        window.location.reload(false);
+    }
     const navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [password,setPassword]=useState("");
@@ -20,7 +25,7 @@ const LoginSignUp = () => {
         }
        
     }
-    const login =(event)=>
+    const login2 =(event)=>
     {
         fetch(`https://climex-5bd2f-default-rtdb.firebaseio.com/users.json`)
         .then(results => results.json())
@@ -35,7 +40,7 @@ const LoginSignUp = () => {
                 localStorage.setItem('email',data[i].email);
                 localStorage.setItem('password',data[i].password);
                 alert("Welcome back");
-                navigate('/');
+                // navigate('/');
                 return;
                 }
             }
@@ -79,7 +84,7 @@ const LoginSignUp = () => {
                         <input className="signIn-input-tag" type="email" placeholder="Email" value={email} name={"email"}  onChange={changeDetail}/>
                         <input className="signIn-input-tag" type="password" placeholder="Password" name={"password"} value={password} onChange={changeDetail} />
                         <a className="signIn-a-tag" href="#">Forgot your password?</a>
-                        <button className="signIn-button-tag" onClick={login}>Sign In</button>
+                        <button className="signIn-button-tag"  onClick={login2}>Sign In</button>
                     </form>
                 </div>
                 <div className="overlay-container-1">
