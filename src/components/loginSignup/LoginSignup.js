@@ -47,7 +47,25 @@ const LoginSignUp = () => {
             alert("Wrong Credentials");
         })
 }
-       
+    
+
+
+const signUpButton = document.getElementById('signUp');
+const signInButton = document.getElementById('signIn');
+const container = document.getElementById('container-1');
+
+if(signInButton != null){
+    signUpButton.addEventListener('click', () => {
+        container.classList.add("right-panel-active");
+    });
+}
+
+if(signInButton != null){
+    signInButton.addEventListener('click', () => {
+        container.classList.remove("right-panel-active");
+    });
+}
+
     
 
     return (
@@ -67,7 +85,7 @@ const LoginSignUp = () => {
                         <input className="signIn-input-tag" type="text" placeholder="Name" />
                         <input className="signIn-input-tag" type="email" placeholder="Email" />
                         <input className="signIn-input-tag" type="password" placeholder="Password" />
-                        <button className="signIn-button-tag">Sign Up</button>
+                        <button className="signIn-button-tag" type="button">Sign Up</button>
                     </form>
                 </div>
                 <div className="form-container-1 sign-in-container-1">
@@ -84,7 +102,7 @@ const LoginSignUp = () => {
                         <input className="signIn-input-tag" type="email" placeholder="Email" value={email} name={"email"}  onChange={changeDetail}/>
                         <input className="signIn-input-tag" type="password" placeholder="Password" name={"password"} value={password} onChange={changeDetail} />
                         <a className="signIn-a-tag" href="#">Forgot your password?</a>
-                        <button className="signIn-button-tag"  onClick={login2}>Sign In</button>
+                        <button className="signIn-button-tag" type="button" onClick={login2}>Sign In</button>
                     </form>
                 </div>
                 <div className="overlay-container-1">
