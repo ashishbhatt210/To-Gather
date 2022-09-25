@@ -30,8 +30,12 @@ const Navbar = () => {
                         </li> */}
                     </ul>
                     <form className="d-flex" role="login-signup">
-                            <button className="btn coral-class m-2" type="submit">Login</button>
-                            <button className="btn coral-class m-2" type="submit">Sign up</button>
+                            <a className="nav-link" href="/login-signup">
+                                <button className="btn coral-class m-2">Login</button>
+                            </a>
+                            <a className="nav-link" href="/login-signup">
+                                <button className="btn coral-class m-2" type="submit">Sign up</button>
+                            </a>
                     </form>
                 </div>
             </div>
