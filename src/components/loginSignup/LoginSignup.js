@@ -25,9 +25,9 @@ const LoginSignUp = () => {
         }
        
     }
-    const login2 =(event)=>
+    function login2()
     {
-        fetch(`https://climex-5bd2f-default-rtdb.firebaseio.com/users.json`)
+      fetch(`https://climex-5bd2f-default-rtdb.firebaseio.com/users.json`)
         .then(results => results.json())
         .then(data => {
             for (let i = 0; i < data.length; i++) {
@@ -40,7 +40,7 @@ const LoginSignUp = () => {
                 localStorage.setItem('email',data[i].email);
                 localStorage.setItem('password',data[i].password);
                 alert("Welcome back");
-                // navigate('/');
+                navigate('/');
                 return;
                 }
             }

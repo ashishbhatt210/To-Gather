@@ -1,7 +1,24 @@
 import React, { useState, useEffect } from "react";
 import '../App.css'
+import {Routes, Route, useNavigate} from 'react-router-dom';
+
 
 const Navbar = () => {
+    const navigate = useNavigate();
+
+    const logout =(event)=>
+    {
+        localStorage.setItem('email',"");
+        localStorage.setItem('password',"");
+        localStorage.setItem('name',"");
+        window.location.reload(false);
+    }
+    const login =(event)=>
+    {
+        navigate('/login-signup');
+   
+    }
+
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark sticky-top ">
             <div className="container-fluid">
@@ -29,8 +46,13 @@ const Navbar = () => {
                             </ul>
                         </li> */}
                     </ul>
-                    <form className="d-flex" action="/login-signup">
-                            <input className="btn coral-class m-2" type={"submit"} value="Login"></input>
+                    <form className="d-flex" >
+                        {
+                        localStorage.getItem('email')== ""?
+                        (<input className="btn coral-class m-2" type={"submit"}  onClick={login} value="Login"></input>):
+                        (<input className="btn coral-class m-2" type={"submit"} onClick={logout} value="Logout"></input>)
+
+                        }
                     </form>
                 </div>
             </div>
