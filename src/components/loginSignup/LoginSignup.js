@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import {Routes, Route, useNavigate} from 'react-router-dom';
-import "./loginFunction.js"
 import "./login.css"
 
 const LoginSignUp = () => {
+
     if(localStorage.getItem('name')=="")
     {
         localStorage.setItem('name',"avatar")
@@ -47,26 +47,30 @@ const LoginSignUp = () => {
             alert("Wrong Credentials");
         })
 }
-    
+   
 
+// const signUpButton = document.getElementById('signUp');
+// const signInButton = document.getElementById('signIn');
 
-const signUpButton = document.getElementById('signUp');
-const signInButton = document.getElementById('signIn');
-const container = document.getElementById('container-1');
+// if(signUpButton != null){
+//     signUpButton.addEventListener('click', () => {
+//         container.classList.add("right-panel-active");
+//     });
+// }
 
-if(signInButton != null){
+window.onload = function() {
+    const container = document.getElementById('container-1');
+    const signUpButton = document.getElementById('signUp');
+    const signInButton = document.getElementById('signIn');
     signUpButton.addEventListener('click', () => {
         container.classList.add("right-panel-active");
     });
-}
-
-if(signInButton != null){
+    
     signInButton.addEventListener('click', () => {
         container.classList.remove("right-panel-active");
     });
-}
+};
 
-    
 
     return (
         <div className="outerlogin-container d-flex align-item-center justify-content-center">
@@ -110,12 +114,12 @@ if(signInButton != null){
                         <div className="overlay-panel overlay-left">
                             <h1 className="signIn-h1-tag">Welcome Back!</h1>
                             <p className="signIn-p-tag">To keep connected with us please login with your personal info</p>
-                            <button className="ghost signIn-button-tag" id="signIn">Sign In</button>
+                            <button className="ghost signIn-button-tag" id="signIn" >Sign In</button>
                         </div>
                         <div className="overlay-panel overlay-right">
                             <h1 className="signIn-h1-tag">Hello, Friend!</h1>
                             <p className="signIn-p-tag">Enter your personal details and start journey with us</p>
-                            <button className="ghost signIn-button-tag" id="signUp">Sign Up</button>
+                            <button className="ghost signIn-button-tag" id="signUp" >Sign Up</button>
                         </div>
                     </div>
                 </div>
