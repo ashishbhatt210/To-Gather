@@ -30,8 +30,8 @@ const Navbar = () => {
                         </li> */}
                     </ul>
                     <form className="d-flex" role="search">
-                        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"></input>
-                            <button className="btn coral-class" type="submit">Search</button>
+                            <button className="btn coral-class m-2" type="submit">Login</button>
+                            <button className="btn coral-class m-2" type="submit">Sign up</button>
                     </form>
                 </div>
             </div>
