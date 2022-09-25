@@ -29,7 +29,7 @@ const Navbar = () => {
                             </ul>
                         </li> */}
                     </ul>
-                    <form className="d-flex" role="search">
+                    <form className="d-flex" role="login-signup">
                             <button className="btn coral-class m-2" type="submit">Login</button>
                             <button className="btn coral-class m-2" type="submit">Sign up</button>
                     </form>
