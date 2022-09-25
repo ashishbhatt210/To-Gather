@@ -31,7 +31,6 @@ const Navbar = () => {
                     </ul>
                     <form className="d-flex" action="/login-signup">
                             <input className="btn coral-class m-2" type={"submit"} value="Login"></input>
-                            <input className="btn coral-class m-2" type={"submit"} value="Sign up"></input>
                     </form>
                 </div>
             </div>
