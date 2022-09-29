@@ -88,6 +88,15 @@ const YourEvents = () => {
     }
     }
 
+    const navigate = useNavigate();
+    const navigateToChatRoom = () => {
+        // 👇️ navigate to /contacts
+        if(localStorage.getItem('email')== "")
+        navigate('/login-signup');
+        else
+        navigate('/chatroom');
+    };
+
     return (
         <div className="shell">
             <div className={"w-100  justify-content-center d-flex flex-column"}>
@@ -147,7 +156,7 @@ const YourEvents = () => {
                         </div>
                         <div className="card-footer">
                         <div className="wcf-left"><span className="price">{events[events.length-1].no_participant} joined</span></div>
-                        <button className="button-74 wcf-right" role="button">Chat</button>
+                        <button className="button-74 wcf-right" role="button" onClick={navigateToChatRoom}>Chat</button>
                         </div>
                         </div>
                         </div>
@@ -172,7 +181,7 @@ const YourEvents = () => {
                                 </div>
                                 <div className="card-footer">
                                     <div className="wcf-left"><span className="price">{events[events.length-2].no_participant} joined</span></div>
-                                    <button className="button-74 wcf-right" role="button">Chat</button>
+                                    <button className="button-74 wcf-right" role="button" onClick={navigateToChatRoom}>Chat</button>
                                 </div>
                             </div>
                         </div>
@@ -196,7 +205,7 @@ const YourEvents = () => {
                                 </div>
                                 <div className="card-footer">
                                     <div className="wcf-left"><span className="price">{events[events.length-3].no_participant} joined</span></div>
-                                    <button className="button-74 wcf-right" role="button">Chat</button>
+                                    <button className="button-74 wcf-right" role="button" onClick={navigateToChatRoom}>Chat</button>
                                 </div>
                             </div>
                         </div>
@@ -220,7 +229,7 @@ const YourEvents = () => {
                                 </div>
                                 <div className="card-footer">
                                     <div className="wcf-left"><span className="price">{events[events.length-4].no_participant} joined</span></div>
-                                    <button className="button-74 wcf-right" role="button">Chat</button>
+                                    <button className="button-74 wcf-right" role="button" onClick={navigateToChatRoom}>Chat</button>
                                 </div>
                             </div>
                         </div>

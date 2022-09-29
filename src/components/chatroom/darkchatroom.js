@@ -2,6 +2,7 @@ import { getValue } from "@testing-library/user-event/dist/utils";
 import { list } from "postcss";
 import React, { useState, useEffect } from "react";
 import "./darkchatroom.scss"
+import "./darkmode.js"
 
 
 function scrolldown(){

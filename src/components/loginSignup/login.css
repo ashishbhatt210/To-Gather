@@ -17,6 +17,10 @@
 	margin: -20px 0 50px;
 }
 
+.login-icon-container{
+	display: flex;
+}
+
 
 .signIn-h1-tag {
 	font-weight: bold;
