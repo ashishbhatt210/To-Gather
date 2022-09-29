@@ -4,7 +4,7 @@ import "./login.css"
 
 const LoginSignUp = () => {
 
-    if(localStorage.getItem('name')=="")
+    if(localStorage.getItem('name')==="")
     {
         localStorage.setItem('name',"avatar")
         window.location.reload(false);
@@ -31,9 +31,6 @@ const LoginSignUp = () => {
         .then(results => results.json())
         .then(data => {
             for (let i = 0; i < data.length; i++) {
-                console.log(data[i].email+" "+email);
-                console.log(data[i].password+" "+password);
-
                 if(data[i].email===email&&data[i].password===password)
                 {
                 localStorage.setItem('name',data[i].name);

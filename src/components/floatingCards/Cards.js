@@ -31,7 +31,7 @@ const Cards = () => {
             <div className={"w-100  justify-content-center d-flex flex-column"}>
                 <img src={icon} alt=" Icon" width="90" className={"m-4 align-self-center"} />
                 <h1 className={"text-setting"}> Events Hub</h1>
-                <p className={"my-2 text-setting2  align-self_center "}>
+                <p className={"px-2 my-2 text-setting2  align-self_center "}>
                     Below are some of the ongoing events for the betterment of the society. Feel free to join these and make some positive change.
                 </p>
             </div>

@@ -8,7 +8,6 @@ import "./darkmode.js"
 function scrolldown(){
     const element = document.getElementById("box");
     element.scrollTop=element.scrollHeight;
-    console.log("ritik");
 }
 
 
@@ -41,7 +40,6 @@ const DarkChatRoom = () => {
         const text = tex.toString();
         const time = timestamp
         
-        var timestamp = new Date().getTime();
         const nextItem=messagesList.length;
         await fetch(`https://climex-5bd2f-default-rtdb.firebaseio.com/messages/chats/${currentEvent}/messaging/${nextItem}.json`, {
             method: 'PUT',
@@ -96,8 +94,6 @@ const DarkChatRoom = () => {
                 if(data.chats[parseInt(currentEvent)].messaging.length!=messagesList.length)
                 scrolldown();
                 setmessagesList(data.chats[parseInt(currentEvent)].messaging);
-
-                // console.log(messagesList);
             })
 
         fetch(`https://climex-5bd2f-default-rtdb.firebaseio.com/eventList/${currentAuthor}.json`)

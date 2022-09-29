@@ -102,7 +102,7 @@ const YourEvents = () => {
             <div className={"w-100  justify-content-center d-flex flex-column"}>
                 <img src={icon} alt=" Icon" width="90" className={"m-4 align-self-center"} />
                 <h1 className={"text-setting"}> Create Events </h1>
-                <p className={"my-2 text-setting2  align-self_center "}>
+                <p className={"px-2 my-2 text-setting2  align-self_center "}>
                     Here you can create some new events for the betterment of the society. Feel free to Host them and make some positive change.
                 </p>
             </div>
