@@ -7,16 +7,34 @@ import "./darkmode.js"
 
 function scrolldown(){
     const element = document.getElementById("box");
-element.scrollTop=element.scrollHeight;
-console.log("ritik");
-
+    element.scrollTop=element.scrollHeight;
+    console.log("ritik");
 }
 
 
 const DarkChatRoom = () => {
 
+    window.onload = function(){
+        const toggleButton = document.querySelector('.dark-light');
+        const colors = document.querySelectorAll('.color');
+
+        colors.forEach(color => {
+        color.addEventListener('click', (e) => {
+            colors.forEach(c => c.classList.remove('selected'));
+            const theme = color.getAttribute('data-color');
+            document.body.setAttribute('data-theme', theme);
+            color.classList.add('selected');
+        });
+        });
+
+
+        toggleButton.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        });
+    }
+
     const sendMessage = async () => {
-      if(message!=""){
+      if(message!==""){
         const tex=message.toString()
         var timestamp = new Date().getTime();
         const authorId = currentAuthor.toString()

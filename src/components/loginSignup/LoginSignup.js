@@ -34,7 +34,7 @@ const LoginSignUp = () => {
                 console.log(data[i].email+" "+email);
                 console.log(data[i].password+" "+password);
 
-                if(data[i].email==email&&data[i].password==password)
+                if(data[i].email===email&&data[i].password===password)
                 {
                 localStorage.setItem('name',data[i].name);
                 localStorage.setItem('email',data[i].email);
@@ -46,30 +46,21 @@ const LoginSignUp = () => {
             }
             alert("Wrong Credentials");
         })
-}
-   
+    }
 
-// const signUpButton = document.getElementById('signUp');
-// const signInButton = document.getElementById('signIn');
 
-// if(signUpButton != null){
-//     signUpButton.addEventListener('click', () => {
-//         container.classList.add("right-panel-active");
-//     });
-// }
-
-window.onload = function() {
-    const container = document.getElementById('container-1');
-    const signUpButton = document.getElementById('signUp');
-    const signInButton = document.getElementById('signIn');
-    signUpButton.addEventListener('click', () => {
-        container.classList.add("right-panel-active");
-    });
-    
-    signInButton.addEventListener('click', () => {
-        container.classList.remove("right-panel-active");
-    });
-};
+    window.onload = function() {
+        const container = document.getElementById('container-1');
+        const signUpButton = document.getElementById('signUp');
+        const signInButton = document.getElementById('signIn');
+        signUpButton.addEventListener('click', () => {
+            container.classList.add("right-panel-active");
+        });
+        
+        signInButton.addEventListener('click', () => {
+            container.classList.remove("right-panel-active");
+        });
+    };
 
 
     return (
