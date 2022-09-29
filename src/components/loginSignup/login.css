@@ -48,8 +48,8 @@
 
 .signIn-button-tag {
 	border-radius: 20px;
-	border: 1px solid #FF4B2B;
-	background-color: #FF4B2B;
+	border: 1px solid coral;
+	background-color: coral;
 	color: #FFFFFF;
 	font-size: 12px;
 	font-weight: bold;
@@ -162,9 +162,9 @@
 }
 
 .overlay {
-	background: #FF416C;
-	background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
-	background: linear-gradient(to right, #FF4B2B, #FF416C);
+	background: rgb(255, 74, 8);
+	background: -webkit-linear-gradient(to right, coral, rgb(255, 74, 8));
+	background: linear-gradient(to right, coral, rgb(255, 74, 8));
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 0 0;
@@ -226,4 +226,22 @@
 	margin: 0 5px;
 	height: 40px;
 	width: 40px;
+}
+
+@media (max-width: 540px){
+	.signIn-button-tag{
+		padding: 5px 10px;
+	}
+
+	.signIn-input-tag{
+		width: auto;
+	}
+
+	.signIn-form-tag{
+		padding: 0 20px;
+	}
+
+	.overlay-panel{
+		padding: 0 10px;
+	}
 }
