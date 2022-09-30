@@ -70,13 +70,13 @@
 }
 .copyright-text
 {
-  margin:0
+  margin:5px;
 }
 @media (max-width:991px)
 {
   .site-footer [class^=col-]
   {
-    margin-bottom:30px
+    margin-bottom:10px
   }
 }
 @media (max-width:767px)
