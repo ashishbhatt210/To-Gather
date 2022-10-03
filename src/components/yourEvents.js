@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
-import Marquee from "react-fast-marquee";
-import { Routes, Route, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './yourEvents.css'
 import '../App.css'
 import icon from "../assets/community.png";
 import eventData from "../data/eventData.json"
-import countries from "../data/latitues_longitudes.json";
+// import countries from "../data/latitues_longitudes.json";
 
 const YourEvents = () => {
     const [events, setEvents] = useState(eventData.events);
@@ -44,7 +43,7 @@ const YourEvents = () => {
     }
 
     const createEventNew =async (event)=>{
-        if(title!=""&&description!=""&&type!="Event Type"){
+        if(title!==""&&description!==""&&type!=="Event Type"){
         const author ="Rahul Singh"
         const authorId ="Rahul Singh"
         const date = 22/12/2022
@@ -91,7 +90,7 @@ const YourEvents = () => {
     const navigate = useNavigate();
     const navigateToChatRoom = () => {
         // 👇️ navigate to /contacts
-        if(localStorage.getItem('email')== "")
+        if(localStorage.getItem('email')=== "")
         navigate('/login-signup');
         else
         navigate('/chatroom');
@@ -156,7 +155,7 @@ const YourEvents = () => {
                         </div>
                         <div className="card-footer">
                         <div className="wcf-left"><span className="price">{events[events.length-1].no_participant} joined</span></div>
-                        <button className="button-74 wcf-right" role="button" onClick={navigateToChatRoom}>Chat</button>
+                        <button className="button-74 wcf-right" onClick={navigateToChatRoom}>Chat</button>
                         </div>
                         </div>
                         </div>
@@ -181,7 +180,7 @@ const YourEvents = () => {
                                 </div>
                                 <div className="card-footer">
                                     <div className="wcf-left"><span className="price">{events[events.length-2].no_participant} joined</span></div>
-                                    <button className="button-74 wcf-right" role="button" onClick={navigateToChatRoom}>Chat</button>
+                                    <button className="button-74 wcf-right" onClick={navigateToChatRoom}>Chat</button>
                                 </div>
                             </div>
                         </div>
@@ -205,7 +204,7 @@ const YourEvents = () => {
                                 </div>
                                 <div className="card-footer">
                                     <div className="wcf-left"><span className="price">{events[events.length-3].no_participant} joined</span></div>
-                                    <button className="button-74 wcf-right" role="button" onClick={navigateToChatRoom}>Chat</button>
+                                    <button className="button-74 wcf-right" onClick={navigateToChatRoom}>Chat</button>
                                 </div>
                             </div>
                         </div>
@@ -229,7 +228,7 @@ const YourEvents = () => {
                                 </div>
                                 <div className="card-footer">
                                     <div className="wcf-left"><span className="price">{events[events.length-4].no_participant} joined</span></div>
-                                    <button className="button-74 wcf-right" role="button" onClick={navigateToChatRoom}>Chat</button>
+                                    <button className="button-74 wcf-right" onClick={navigateToChatRoom}>Chat</button>
                                 </div>
                             </div>
                         </div>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Marquee from "react-fast-marquee";
-import {Routes, Route, useNavigate} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 import './Cards.css'
 import '../../App.css'
 import './cards.scss'
@@ -11,7 +11,7 @@ const Cards = () => {
     const navigate = useNavigate();
     const navigateToChatRoom = () => {
         // 👇️ navigate to /contacts
-        if(localStorage.getItem('email')== "")
+        if(localStorage.getItem('email')=== "")
         navigate('/login-signup');
         else
         navigate('/chatroom');
@@ -51,7 +51,7 @@ const Cards = () => {
 
                             <div className="card">
                             <figure className="card__thumb">
-                            <img src={event.image} alt="Picture by Kyle Cottrell" className="card__image"/>
+                            <img src={event.image} alt="To-Gather" className="card__image"/>
                             <figcaption className="card__caption">
                             <h2 className="card__title">{event.title}</h2>
                                 <span className="tag tag-teal">{event.type}</span>

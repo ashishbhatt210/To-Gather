@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import '../App.css'
-import {Routes, Route, useNavigate} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 
 
 const Navbar = () => {
@@ -20,7 +20,7 @@ const Navbar = () => {
     }
     function divert()
     {
-        if(localStorage.getItem('email')== "")
+        if(localStorage.getItem('email')=== "")
         navigate('/login-signup');
         else
         navigate('/chatroom');
@@ -41,7 +41,7 @@ const Navbar = () => {
                         </li>
                         <li className="nav-item">
                             {
-                                localStorage.getItem('email')== ""?
+                                localStorage.getItem('email')=== ""?
                             (<a className="nav-link " href="/login-signup">Discussion</a>  ):
                             (<a className="nav-link " href="/chatroom">Discussion</a>  )
 }
@@ -60,7 +60,7 @@ const Navbar = () => {
                     </ul>
                     <form className="d-flex" >
                         {
-                        localStorage.getItem('email')== ""?
+                        localStorage.getItem('email')=== ""?
                         (<input className="btn coral-class m-2" type={"submit"}  onClick={login} value="Login"></input>):
                         (<input className="btn coral-class m-2" type={"submit"} onClick={logout} value="Logout"></input>)
 
