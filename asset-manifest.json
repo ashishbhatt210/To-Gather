@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/To-Gather/static/css/main.9d991293.css",
+    "main.js": "/To-Gather/static/js/main.e940fd21.js",
+    "static/js/483.5433228d.chunk.js": "/To-Gather/static/js/483.5433228d.chunk.js",
+    "static/js/787.7825b15f.chunk.js": "/To-Gather/static/js/787.7825b15f.chunk.js",
+    "static/media/fontawesome-webfont.svg?v=4.7.0": "/To-Gather/static/media/fontawesome-webfont.c1e38fd9e0e74ba58f7a.svg",
+    "static/media/community.png": "/To-Gather/static/media/community.ecde9ebbbb354e27e8d5.png",
+    "static/media/fontawesome-webfont.eot": "/To-Gather/static/media/fontawesome-webfont.8b43027f47b20503057d.eot",
+    "static/media/fontawesome-webfont.ttf?v=4.7.0": "/To-Gather/static/media/fontawesome-webfont.1e59d2330b4c6deb84b3.ttf",
+    "static/media/fontawesome-webfont.woff?v=4.7.0": "/To-Gather/static/media/fontawesome-webfont.f691f37e57f04c152e23.woff",
+    "static/media/map_danger_icon.png": "/To-Gather/static/media/map_danger_icon.79406cc4c7405ccd74e7.png",
+    "static/media/fontawesome-webfont.woff2?v=4.7.0": "/To-Gather/static/media/fontawesome-webfont.20fd1704ea223900efa9.woff2",
+    "static/media/event_icon.png": "/To-Gather/static/media/event_icon.f9a79b29fc38110062ec.png",
+    "static/media/mark.png": "/To-Gather/static/media/mark.ac05993c7deaa1cf05a0.png",
+    "index.html": "/To-Gather/index.html",
+    "static/media/index.cjs": "/To-Gather/static/media/index.cd351d7c31d0d3fccf96.cjs",
+    "main.9d991293.css.map": "/To-Gather/static/css/main.9d991293.css.map",
+    "main.e940fd21.js.map": "/To-Gather/static/js/main.e940fd21.js.map",
+    "483.5433228d.chunk.js.map": "/To-Gather/static/js/483.5433228d.chunk.js.map",
+    "787.7825b15f.chunk.js.map": "/To-Gather/static/js/787.7825b15f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9d991293.css",
+    "static/js/main.e940fd21.js"
+  ]
+}
