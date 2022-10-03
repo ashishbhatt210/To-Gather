@@ -143,10 +143,10 @@ const Aquimap = () => {
 
                                 <div className="container-popup">
                                     <div className="item-1">
-                                        <h3 className={"item_name"}>Co = {countryData.co}</h3>
+                                        <h3 className={"item_name"}>CO = {countryData.co}</h3>
                                     </div>
                                     <div className="item-2">
-                                        <h3 className={"item_name"}>No = {countryData.no}</h3>
+                                        <h3 className={"item_name"}>NO = {countryData.no}</h3>
 
                                     </div>
                                     <div className="item-2">
