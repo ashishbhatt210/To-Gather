@@ -6,6 +6,9 @@ import "./Aquimap.css"
 import countries from "../data/latitues_longitudes.json"
 import mark from "../assets/mark.png";
 import { nanoid } from "nanoid";
+import mapboxgl from 'mapbox-gl';
+// eslint-disable-next-line import/no-webpack-loader-syntax
+mapboxgl.workerClass = require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default;
 
 
 const MAPBOX_TOKEN = 'pk.eyJ1IjoiZ29kZmxhbWUiLCJhIjoiY2w3ODN5bXI2MDV6bDNybzN1N21hZnJyaSJ9.kNtArpczBGeDcqGNZCk2yQ'; // Set your mapbox token here
