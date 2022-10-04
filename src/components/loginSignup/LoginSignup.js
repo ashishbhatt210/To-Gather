@@ -68,9 +68,9 @@ const LoginSignUp = () => {
                         <h1 className="signIn-h1-tag">Create Account</h1>
                         <div className="social-container-1">
                             <ul className="social-icons login-icon-container">
-                                <li><a className="facebook" href="#"><i className="fa fa-facebook"></i></a></li>
-                                <li><a className="google-plus" href="#"><i className="fa fa-google-plus"></i></a></li>
-                                <li><a className="linkedin" href="#"><i className="fa fa-linkedin"></i></a></li>
+                                <li><a className="facebook" href="/login-signup"><i className="fa fa-facebook"></i></a></li>
+                                <li><a className="google-plus" href="/login-signup"><i className="fa fa-google-plus"></i></a></li>
+                                <li><a className="linkedin" href="/login-signup"><i className="fa fa-linkedin"></i></a></li>
                             </ul>
                         </div>
                         <span className="signIn-span-tag">or use your email for registration</span>
@@ -85,15 +85,15 @@ const LoginSignUp = () => {
                         <h1 className="signIn-h1-tag">Sign in</h1>
                         <div className="social-container-1">
                             <ul className="social-icons login-icon-container">
-                                <li><a className="facebook" href="#"><i className="fa fa-facebook"></i></a></li>
-                                <li><a className="google-plus" href="#"><i className="fa fa-google-plus"></i></a></li>
-                                <li><a className="linkedin" href="#"><i className="fa fa-linkedin"></i></a></li>
+                                <li><a className="facebook" href="/login-signup"><i className="fa fa-facebook"></i></a></li>
+                                <li><a className="google-plus" href="/login-signup"><i className="fa fa-google-plus"></i></a></li>
+                                <li><a className="linkedin" href="/login-signup"><i className="fa fa-linkedin"></i></a></li>
                             </ul>
                         </div>
                         <span className="signIn-span-tag">or use your account</span>
                         <input className="signIn-input-tag" type="email" placeholder="Email" value={email} name={"email"}  onChange={changeDetail}/>
                         <input className="signIn-input-tag" type="password" placeholder="Password" name={"password"} value={password} onChange={changeDetail} />
-                        <a className="signIn-a-tag" href="#">Forgot your password?</a>
+                        <a className="signIn-a-tag" href="/login-signup">Forgot your password?</a>
                         <button className="signIn-button-tag" type="button" onClick={login2}>Sign In</button>
                     </form>
                 </div>
